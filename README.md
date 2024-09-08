@@ -27,6 +27,7 @@ At first we implemented a few Classic ML Classifiers with a higher accuracy powe
 **Feature Extraction**: The script computes a series of statistical features for each EEG signal, such as mean, standard deviation, peak-to-peak distance, variance, minimum, maximum, and others, including skewness and kurtosis. These features capture the variability, distribution, and dispersion characteristics of the EEG signals, making them suitable for input into machine learning models.
 
 Since we focus on time-domain features, it is important to note that due to the nature of SVMs, the model was omitted as SVMs tend to work better with frequency-domain features.
+
 **Machine Learning Pipeline**:
 
 - **Logistic Regression**: The first machine learning pipeline uses a logistic regression model within a grid search cross-validation framework (GridSearchCV). The model is trained on scaled features with a hyperparameter tuning step that iterates over different regularization strengths (C). The use of GroupKFold ensures that data from the same group (here, likely corresponding to individual subjects) are not split across the train and test sets, thus maintaining the integrity of the validation process.
