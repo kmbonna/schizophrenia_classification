@@ -50,4 +50,4 @@ It is also important to note that there are 18 channels per signal, which points
 
 There is its architecture:
 
-
+![ChronoNet Architecture](images/Proposed-ChronoNet-architecture-which-includes-both-multiple-filters-of-exponentially.png)
