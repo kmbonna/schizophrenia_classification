@@ -51,3 +51,11 @@ It is also important to note that there are 18 channels per signal, which points
 There is its architecture:
 
 ![ChronoNet Architecture](images/Proposed-ChronoNet-architecture-which-includes-both-multiple-filters-of-exponentially.png)
+
+
+Both GroupKFold and LOGO were used (for avoiding data leakage) for validating with different hyperparameters and different duration of he signal (5 seconds, 10 seconds, 30 seconds). Model that was most suitable was selected and saved.
+
+In our evaluation, instead of taking into account every prediction of every signal of one patient, a different evaluation was implemented where for each patient, all of their predictions are taken into a majority vote to classify whether this PATIENT (AND NOT THIS EPOCH SIGNAL) is schizophrenic or not.
+
+![Confusion Matrix of LOGO](images/Screenshot (110).png)
+
