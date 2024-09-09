@@ -40,3 +40,14 @@ Both Models performed better than a random model, with approximately 66% accurac
 
 ### 3. Deep ML Classifiers
 
+As for Deep Learning solutions we were concerned with a few options.
+
+Since the data is time-series (Sequential), it is important to incorporate a Deep model that temporal elements into its modelling, examples include: 1DCNN, LSTM,GRU and their variants.
+
+It is also important to note that there are 18 channels per signal, which points to the direction of using convolution to discover features.
+
+1DCNN are proposed, as well as a sequential model including both Convolutional layers and GRU layers. I also propose the usage of Chrononet, a Deep CNN-GRU architecture that works well with EEG signals. ChronoNet is formed by stacking multiple 1D convolution layers followed by deep gated recurrent unit (GRU) layers where each 1D convolution layer uses multiple filters of exponentially varying lengths and the stacked GRU layers are densely connected in a feed-forward manner. It has been shown to succeed at getting great results for EEG classification. 
+
+There is its architecture:
+
+
