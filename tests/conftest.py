@@ -12,7 +12,10 @@ def make_raw(seconds=30.0, sfreq=250.0, channels=None, seed=0, alpha_amp=0.0):
     n = int(seconds * sfreq)
     t = np.arange(n) / sfreq
     data = rng.normal(scale=10e-6, size=(len(channels), n))
-    data += alpha_amp * np.sin(2 * np.pi * 10 * t)
+    # Vary amplitude across channels; a signal identical on every channel would
+    # be removed entirely by the average reference.
+    gains = np.linspace(0.0, 2.0, len(channels))[:, None]
+    data += alpha_amp * gains * np.sin(2 * np.pi * 10 * t)
     info = mne.create_info(channels, sfreq, ch_types="eeg")
     return mne.io.RawArray(data, info, verbose="ERROR")
 
