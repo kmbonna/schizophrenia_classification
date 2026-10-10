@@ -174,3 +174,8 @@ logs/
 plots/
 *.keras
 *.joblib
+
+# Claude Code (local assistant settings/notes)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
