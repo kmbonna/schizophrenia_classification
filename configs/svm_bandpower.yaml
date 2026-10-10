@@ -1,0 +1,12 @@
+name: svm_bandpower
+seed: 42
+model:
+  name: svm
+  features: [bandpower]
+  params:
+    kernel: rbf
+  param_grid:
+    classifier__C: [0.1, 1.0, 10.0]
+evaluation:
+  cv: logo
+  threshold: 0.5

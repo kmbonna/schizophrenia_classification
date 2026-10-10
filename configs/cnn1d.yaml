@@ -1,0 +1,12 @@
+# Compact 1D CNN on raw 5 s windows (requires the [deep] extra).
+name: cnn1d
+seed: 42
+model:
+  name: cnn1d
+  features: []  # deep models learn from the raw windows
+  params:
+    epochs: 10
+    batch_size: 128
+evaluation:
+  cv: logo
+  threshold: 0.5

@@ -1,0 +1,11 @@
+# Log relative band power (delta, theta, alpha, beta, gamma) per channel.
+name: logreg_bandpower
+seed: 42
+model:
+  name: logistic_regression
+  features: [bandpower]
+  param_grid:
+    classifier__C: [0.01, 0.1, 1.0]
+evaluation:
+  cv: logo
+  threshold: 0.5

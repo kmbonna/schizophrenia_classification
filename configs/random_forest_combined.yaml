@@ -1,0 +1,11 @@
+name: random_forest_combined
+seed: 42
+model:
+  name: random_forest
+  features: [time, bandpower]
+  params:
+    n_estimators: 300
+    min_samples_leaf: 5
+evaluation:
+  cv: logo
+  threshold: 0.5

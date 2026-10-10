@@ -1,0 +1,11 @@
+# Baseline from the original notebook: 13 time-domain statistics per channel.
+name: logreg_time
+seed: 42
+model:
+  name: logistic_regression
+  features: [time]
+  param_grid:
+    classifier__C: [0.01, 0.1, 1.0]
+evaluation:
+  cv: logo
+  threshold: 0.5

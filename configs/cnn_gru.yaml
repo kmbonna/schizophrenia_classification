@@ -1,0 +1,11 @@
+name: cnn_gru
+seed: 42
+model:
+  name: cnn_gru
+  features: []  # deep models learn from the raw windows
+  params:
+    epochs: 10
+    batch_size: 128
+evaluation:
+  cv: logo
+  threshold: 0.5

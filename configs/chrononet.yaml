@@ -1,0 +1,12 @@
+# ChronoNet (Roy et al., 2018) on raw 5 s windows (requires the [deep] extra).
+name: chrononet
+seed: 42
+model:
+  name: chrononet
+  features: []  # deep models learn from the raw windows
+  params:
+    epochs: 10
+    batch_size: 128
+evaluation:
+  cv: logo
+  threshold: 0.5
