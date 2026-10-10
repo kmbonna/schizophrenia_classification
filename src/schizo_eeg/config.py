@@ -46,6 +46,9 @@ class ModelConfig:
 
     name: str = "logistic_regression"
     params: Dict[str, Any] = field(default_factory=dict)
+    # Feature families for classical models ("time", "bandpower"); ignored by
+    # deep models, which learn from the raw windows.
+    features: List[str] = field(default_factory=lambda: ["time"])
     # Optional hyperparameter grid, tuned with an inner subject-grouped CV.
     param_grid: Optional[Dict[str, List[Any]]] = None
 
